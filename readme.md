@@ -2,6 +2,55 @@
 <img width="1700" height="1276" alt="pep" src="https://github.com/user-attachments/assets/877238c3-941e-4c4b-b7c5-e29d152f8b74" />
 
 
+# Chess: Move Sequences vs Unique Positions After 3 Moves
+
+Many people say that by move 3 in chess there are **121 million possible positions**.  
+This is **mostly true**, but it depends on what you're counting.
+
+## Two Different Numbers
+
+1. **Move Sequences (Paths)** — Counts every possible order of moves.
+2. **Unique Board Positions** — Counts each distinct board only once, even if reachable by different move orders.
+
+## Numbers After 3 Full Moves (6 half-moves)
+
+| Plies | Full Moves | Move Sequences       | Unique Positions   |
+|-------|------------|----------------------|--------------------|
+| 1     | 0.5        | 20                   | 20                 |
+| 2     | 1          | 400                  | 400                |
+| 3     | 1.5        | 8,902                | 5,362              |
+| 4     | 2          | 197,281              | 72,078             |
+| 5     | 2.5        | 4,865,609            | 822,518            |
+| **6** | **3**      | **119,060,324**      | **9,417,681**      |
+
+> After 3 moves by each player:
+> - **~119 million** different *ways* the game can unfold
+> - Only **~9.42 million** truly *different board positions*
+
+## Why the Big Difference?
+
+This gap is caused by **transpositions** — the same position reached through different move orders.
+
+**Example:**
+- Sequence A: `1. e4 e5 2. Nf3 Nc6`
+- Sequence B: `1. Nf3 Nc6 2. e4 e5`
+
+Both lead to the **exact same board**, but count as two different sequences.
+
+## Summary
+
+- The popular "121 million" number refers to **possible move sequences** (very close to the exact 119 million).
+- The number of **unique positions** is significantly lower — around **9.4 million** — but still enormous.
+
+This rapid growth demonstrates why chess is so complex and why computers need sophisticated algorithms to play it well.
+
+
+
+
+
+
+
+
 # Rust lang is god. 
 
 <img width="220" height="220" alt="d" src="https://github.com/user-attachments/assets/5709f62a-6da2-4290-8d8a-fbc31d5985b7" />
